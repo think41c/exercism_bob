@@ -15,8 +15,8 @@ class Bob
   end
 
   def type_input 
-    # @remark = remark.gsub(" ", "")
     @remark = remark.strip
+
     if remark.length == 0 
       :empty
     elsif remark.end_with?("?") && remark.downcase == remark.upcase
@@ -27,6 +27,9 @@ class Bob
       :question
     elsif remark == remark.upcase
       :all_caps
+    # If there's no letters, they're not shouting. 
+    # If there's no letters, then upcase and downcase are identical. 
+    
     else
       :other
     end
