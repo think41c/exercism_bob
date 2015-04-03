@@ -1,9 +1,11 @@
 class Bob
   def hey(remark)
-    case remark
-    when "SHOUTING"
+    if remark.length < 5
+      puts "Fine. Be that way."
+    elsif remark == remark.upcase
       puts "Whoa, chill out!"
-    when "Tom-ay-to, tom-aaaah-to." then "Whatever."
+    elsif remark[-1] == "?"
+      puts "Whatever."
     end
   end
 
@@ -14,4 +16,4 @@ class Bob
 # If Not a ? and not all upcase, and not blank (eg. 'else') then output "Whatever"
 end
 a = Bob.new
-a.hey("SHOUTING")
+a.hey("aaa??????????????")
