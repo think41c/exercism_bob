@@ -25,11 +25,10 @@ class Bob
       :all_caps
     elsif remark.end_with?("?")
       :question
+    elsif remark.upcase == remark.downcase
+      :other
     elsif remark == remark.upcase
       :all_caps
-    # If there's no letters, they're not shouting. 
-    # If there's no letters, then upcase and downcase are identical. 
-    
     else
       :other
     end
