@@ -1,9 +1,9 @@
 class Bob
-
   def hey(remark)
     case remark
-    when "I HATE YOU" then  "Whoa, chill out!"
-    when "Tom-ay-to, tom-aaaah-to." then  "Whatever."
+    when "SHOUTING"
+      puts "Whoa, chill out!"
+    when "Tom-ay-to, tom-aaaah-to." then "Whatever."
     end
   end
 
@@ -13,3 +13,5 @@ class Bob
 # If ? is the last character of a string, then output "Sure."
 # If Not a ? and not all upcase, and not blank (eg. 'else') then output "Whatever"
 end
+a = Bob.new
+a.hey("SHOUTING")
