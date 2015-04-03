@@ -5,7 +5,9 @@ class Bob
     elsif remark == remark.upcase
       puts "Whoa, chill out!"
     elsif remark[-1] == "?"
-      puts "Whatever."
+      puts "Sure."
+    else 
+      puts "Whatever"
     end
   end
 
@@ -16,4 +18,4 @@ class Bob
 # If Not a ? and not all upcase, and not blank (eg. 'else') then output "Whatever"
 end
 a = Bob.new
-a.hey("aaa??????????????")
+a.hey("aaa?????????????ff?ff")
