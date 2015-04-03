@@ -62,7 +62,6 @@ class BobTest < Minitest::Test
   end
 
   def test_only_numbers
-    skip
     remark = '1, 2, 3'
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
@@ -93,13 +92,11 @@ class BobTest < Minitest::Test
   end
 
   def test_silence
-    skip
     remark = ''
     assert_equal 'Fine. Be that way!', bob.hey(remark), feedback(remark)
   end
 
   def test_prolonged_silence
-    skip
     remark = ' ' * rand(1..10)
     assert_equal 'Fine. Be that way!', bob.hey(remark), feedback(remark)
   end
