@@ -25,6 +25,8 @@ class Bob
       :other
     end
   end
+# Perhaps if you gsub spaces for "" and then test to see if the length is 0 that will fix the 
+# spacing issue. 
 
 end
 
