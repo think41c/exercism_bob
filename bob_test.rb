@@ -52,7 +52,6 @@ class BobTest < Minitest::Test
   end
 
   def test_forceful_questions
-    skip
     remark = 'WHAT THE HELL WERE YOU THINKING?'
     assert_equal 'Whoa, chill out!', bob.hey(remark), feedback(remark)
   end

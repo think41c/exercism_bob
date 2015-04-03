@@ -15,9 +15,16 @@ class Bob
   end
 
   def type_input 
+    # require 'pry'
+    # binding.pry 
+
     if remark == " "
       :empty
-    elsif remark.end_with?("?")
+    elsif remark.end_with?("?") && remark.downcase == remark.upcase
+      :question
+    elsif remark.end_with?("?") && remark == remark.upcase
+      :all_caps
+    elsif remark.end_with?("?") 
       :question
     elsif remark == remark.upcase 
       :all_caps
