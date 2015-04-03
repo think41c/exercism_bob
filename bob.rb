@@ -1,21 +1,58 @@
 class Bob
   def hey(remark)
-    if remark.length < 5
-      puts "Fine. Be that way."
+    
+    bob_says = {
+      question: "Sure.",
+      all_caps: "Whoa, chill out!", 
+      empty:    "Fine. Be that way.",
+      other:    "Whatever."
+      }
+
+    if remark == " "
+      bob_says.fetch(:empty) 
     elsif remark == remark.upcase
-      puts "Whoa, chill out!"
-    elsif remark[-1] == "?"
-      puts "Sure."
+      bob_says.fetch(:all_caps)
+    elsif remark.end_with?("?")
+      bob_says.fetch(:question)
     else 
-      puts "Whatever"
+      bob_says.fetch(:other)
     end
   end
-
-# Psuedo-code
-# If upcasing the input is equal to the input, then the comment is shouting and should result in "Woah, chill out!" 
-# If input is junky, like blank lines, tabs, etc. then give a "Fine. be that way."
-# If ? is the last character of a string, then output "Sure."
-# If Not a ? and not all upcase, and not blank (eg. 'else') then output "Whatever"
 end
+
 a = Bob.new
-a.hey("aaa?????????????ff?ff")
+p a.hey(" ")
+
+#   def hey(input)
+#     Responder.new(input).response
+#   end
+
+#   class Responder
+#     attr_accessor :input
+
+#     def initialize(input)
+#       self.input = input
+#     end
+
+#     def input
+#       @input ||= ""
+#     end
+
+#     def response
+#       RESPONSES.fetch(input_type)
+#     end
+
+#     def input_type
+#       if input == ""
+#         :silence
+#       elsif input == input.upcase
+#         :anger
+#       elsif input.end_with? "?"
+#         :question
+#       else
+#         :else
+#       end
+#     end
+
+#   end
+# end
