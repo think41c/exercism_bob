@@ -15,21 +15,17 @@ class Bob
 
   def type_input 
     @remark = remark.strip
+    remark.gsub!(',', '')
+    remark.gsub!(' ', '')
 
     check = remark.scan(/[1234567890?]/)   # check will be only the numbers and ? of 'remark'
 
     if remark.length == 0 
       :empty  
-    elsif remark.end_with?("?") && remark.length == check.join.length
-      :question
-    elsif remark.end_with?("?") && remark == remark.upcase
+    elsif (remark == remark.upcase) && remark.length != check.join.length
       :all_caps
-    elsif remark.end_with?("?")
+    elsif (remark.end_with?("?") && remark.length == check.join.length) || remark.end_with?("?")
       :question
-    elsif remark.upcase == remark.downcase
-      :other
-    elsif remark == remark.upcase
-      :all_caps
     else
       :other
     end
