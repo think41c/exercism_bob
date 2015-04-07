@@ -13,18 +13,18 @@ class Bob
     @bob_says.fetch(type_input)
   end
 
-  def type_input 
+  def type_input
     @remark = remark.strip
     remark.gsub!(',', '')
     remark.gsub!(' ', '')
 
-    check = remark.scan(/[1234567890?]/)   # check will be only the numbers and ? of 'remark'
+    check = remark.scan(/[\d?]/)
 
-    if remark.length == 0 
+    if remark.empty?
       :empty  
-    elsif (remark == remark.upcase) && remark.length != check.join.length
+    elsif remark == remark.upcase && (remark.length != check.join.length)
       :all_caps
-    elsif (remark.end_with?("?") && remark.length == check.join.length) || remark.end_with?("?")
+    elsif remark.end_with?("?")   && (remark.length == check.join.length) || remark.end_with?("?")
       :question
     else
       :other
